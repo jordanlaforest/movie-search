@@ -7,10 +7,10 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
-import styles from './Counter.module.css';
+} from '../../app/searchReducer';
+import styles from './Search.module.css';
 
-export function Counter() {
+export function Search() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
