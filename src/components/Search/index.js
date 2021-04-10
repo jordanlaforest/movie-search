@@ -8,9 +8,9 @@ import {
   incrementIfOdd,
   selectCount,
 } from '../../app/searchReducer';
-import styles from './Search.module.css';
+import styles from './styles.css';
 
-export function Search() {
+export default function Search() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');

@@ -1,0 +1,40 @@
+.headerContainer {
+    padding: 20px;
+    background-color: #329ea8;
+}
+
+.headingText {
+    margin: 0;
+    font-size: 1.5em;
+    margin-right: -152px;
+}
+
+.searchForm {
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.searchInput {
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    padding: 5px 10px;
+}
+
+.searchButton {
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+@media (max-width: 650px) {
+    .headerContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .headingText {
+        margin: 0 0 15px 0;
+    }
+}

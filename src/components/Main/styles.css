@@ -1,0 +1,8 @@
+.mainContent {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b6dfe3;
+    height: 100%;
+}
