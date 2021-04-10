@@ -17,7 +17,7 @@
 
 .cardDetails {
     flex-direction: column;
-    padding-left: 20px;
+    padding: 0 15px 0 15px;
 }
 
 .cardDetails p {
