@@ -3,6 +3,6 @@ import searchReducer from './searchReducer';
 
 export const store = configureStore({
   reducer: {
-    counter: searchReducer,
+    search: searchReducer,
   },
 });
