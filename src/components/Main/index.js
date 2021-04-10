@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import './styles.css';
 
+import ResultCard from '../ResultCard';
 import {selectSearchResults} from '../../app/searchReducer';
 
 const pleaseSearch = <p>Type a search in the field above</p>;
@@ -13,15 +14,15 @@ export default function Main() {
   
 	return (
 		<main className="mainContent">
-			{!results
+			{!results || results.length === 0
         ?
-				  pleaseSearch
+				  results ? noResults : pleaseSearch
 				:
-			    <ul>
+          <div className="cardContainer">
             {results.map(movie => 
-              <li>{movie.title}</li>
+              <ResultCard movie={movie} />
             )}
-          </ul>
+          </div>
       }
 		</main>
 	);
