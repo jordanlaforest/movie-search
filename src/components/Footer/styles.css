@@ -29,3 +29,9 @@
         height: 20px;
     }
 }
+
+@media (max-width: 380px) {
+  .footerText {
+    font-size: .5em;
+  }
+}
