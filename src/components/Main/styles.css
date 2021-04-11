@@ -13,3 +13,9 @@
   flex-direction: column;
   padding: 5px;
 }
+
+.infiniteScroll {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

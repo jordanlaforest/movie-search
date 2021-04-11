@@ -26,7 +26,7 @@ export default function Header() {
           className="searchButton"
           onClick={(e) => {
             e.preventDefault();
-            dispatch(fetchSearch(inputState))
+            dispatch(fetchSearch({query: inputState}));
           }}
         >
           Search

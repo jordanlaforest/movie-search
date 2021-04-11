@@ -2,13 +2,13 @@ import axios from 'axios';
 
 const url = 'https://api.themoviedb.org/3/search/movie';
 
-// A mock function to mimic making an async request for data
-export function searchAPIRequest(searchString) {
+export function searchAPIRequest(searchString, page) {
   return new Promise((resolve, reject) =>
     axios.get(url, {
       params: {
         api_key: 'd5bf0d62db7cc13fd854ff840dd47ff1',
-        query: searchString
+        query: searchString,
+        page: page
       }
     })
     .then((response) => {
