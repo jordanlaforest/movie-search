@@ -39,19 +39,23 @@ export default function ResultCard(props) {
     vote_average
   } = props.movie;
 
-  const date = Date(release_date)
-
   const genres = genre_ids.map(gid => genreMap[gid]).join(', ');
   
   return (
     <div className="resultCard">
-      <img src={posterImgPath + poster_path} alt='' />
+      {poster_path ?
+        <img src={posterImgPath + poster_path} alt='' />
+        :
+        <img src="/poster-placeholder.png" className="posterPlaceholder" alt='' />
+      }
       <div className="cardDetails">
         <h4>{title}</h4>
-        <p><strong>Released:</strong>&nbsp;{release_date}</p>
+        <div className="releaseRatingContainer">
+          <span className="releaseDate">{release_date}</span>
+          <span className="rating">{vote_average}/10</span>
+        </div>
+        <p className="movieOverview">{overview}</p>
         <p><strong>Genres:</strong>&nbsp;{genres}</p>
-        <p><strong>Synopsis:</strong>&nbsp;{overview}</p>
-        <p><strong>Rating:</strong>&nbsp;{vote_average}</p>
       </div>
     </div>
   );

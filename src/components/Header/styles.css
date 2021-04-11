@@ -1,12 +1,14 @@
 .headerContainer {
     padding: 20px;
     background-color: #329ea8;
+    box-shadow: inset 0px 20px 50px 0px #1a676e;
 }
 
 .headingText {
     margin: 0;
     font-size: 1.5em;
     margin-right: -152px;
+    color: whitesmoke;
 }
 
 .searchForm {
@@ -26,12 +28,15 @@
     padding: 5px 10px;
     border: 1px solid black;
     align-items: center;
+    background-color: #1a676e;
+    color: whitesmoke;
 }
 
 @media (max-width: 650px) {
     .headerContainer {
         flex-direction: column;
         align-items: center;
+        box-shadow: inset 0px 20px 50px 20px #1a676e;
     }
 
     .headingText {
