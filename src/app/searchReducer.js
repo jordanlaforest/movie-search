@@ -71,7 +71,7 @@ export const { increment, decrement, incrementByAmount } = searchSlice.actions;
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectSearchResults = (state) => state.search.results;
 export const selectStatus = (state) => state.search.status;
-export const selectNoMorePages = (state) => state.search.lastPageFetched === state.search.totalPages;
+export const selectNoMorePages = (state) => state.search.lastPageFetched >= state.search.totalPages;
 export const selectNotSearched = (state) => state.search.lastPageFetched === 0;
 
 export default searchSlice.reducer;

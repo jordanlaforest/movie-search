@@ -6,8 +6,8 @@ import './styles.css';
 import ResultCard from '../ResultCard';
 import {selectSearchResults, selectStatus, selectNoMorePages, selectNotSearched, fetchNextPage} from '../../app/searchReducer';
 
-const pleaseSearch = <p>Type a search in the field above</p>;
-const noResults = <p>No results found. Please try again.</p>;
+const pleaseSearch = <p className="contentMsg">Type a search in the field above</p>;
+const noResults = <p className="contentMsg">No results found. Please try again.</p>;
 
 export default function Main() {
   const results = useSelector(selectSearchResults);
@@ -17,6 +17,8 @@ export default function Main() {
 
   const dispatch = useDispatch();
   const ref = useRef();
+
+  const noMorePagesDiv = noMorePages && !notSearched && results.length !== 0 ? '' : 'infiniteScroll';
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -30,12 +32,12 @@ export default function Main() {
       if(currentRef) observer.unobserve(currentRef);
     };
   }, [ref, results, notSearched, noMorePages, dispatch]);
-  
+
 	return (
 		<main className="mainContent">
 			{results.length === 0
         ?
-				  notSearched ? pleaseSearch : noResults
+          status === 'loading' ? null : notSearched ? pleaseSearch : noResults
 				:
           <div className="cardContainer">
             {results.map((movie, index) => 
@@ -43,8 +45,8 @@ export default function Main() {
             )}
           </div>
       }
-      <div className="infiniteScroll" ref={ref}>No more results to load</div>
-      {status === 'loading' ? <div className="loading">Loading results...</div> : null}
+      <div className={noMorePagesDiv} ref={ref}><p className="contentMsg">No more results to load</p></div>
+      {status === 'loading' ? <p className="contentMsg">Loading results...</p> : null}
 		</main>
 	);
 }

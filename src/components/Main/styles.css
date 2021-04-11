@@ -14,8 +14,17 @@
   padding: 5px;
 }
 
+.contentMsg {
+  color: #1a676e;
+  font-weight: bold;
+}
+
 .infiniteScroll {
   height: 0;
   width: 0;
   overflow: hidden;
+}
+
+.infiniteScrollVisible {
+
 }
