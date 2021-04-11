@@ -54,8 +54,8 @@ export default function ResultCard(props) {
           <span className="releaseDate">{release_date}</span>
           <span className="rating">{vote_average}/10</span>
         </div>
+        <p className="genres">{genres}</p>
         <p className="movieOverview">{overview}</p>
-        <p><strong>Genres:</strong>&nbsp;{genres}</p>
       </div>
     </div>
   );

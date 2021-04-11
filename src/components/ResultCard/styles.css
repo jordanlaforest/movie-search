@@ -30,10 +30,6 @@ h4 {
   margin: 2px 0 2px 0;
 }
 
-.cardDetails p strong {
-  display: contents;
-}
-
 .releaseRatingContainer {
   justify-content: space-between;
 }
@@ -48,8 +44,11 @@ span.rating {
   font-weight: bold;
 }
 
+p.genres {
+  font-style: italic;
+}
+
 p.movieOverview {
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
