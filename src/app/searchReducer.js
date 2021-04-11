@@ -19,7 +19,7 @@ export const fetchSearch = createAsyncThunk(
   async (args) => {
     const page = args.page ? args.page : 1;
     const response = await searchAPIRequest(args.query, page);
-    return response.data;
+    return response;
   }
 );
 
