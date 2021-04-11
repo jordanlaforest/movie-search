@@ -49,7 +49,7 @@ p.genres {
 }
 
 p.movieOverview {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .posterPlaceholder {
