@@ -19,8 +19,8 @@ export default function Main() {
 				  results ? noResults : pleaseSearch
 				:
           <div className="cardContainer">
-            {results.map(movie => 
-              <ResultCard movie={movie} />
+            {results.map((movie, index) => 
+              <ResultCard key={index} movie={movie} />
             )}
           </div>
       }
