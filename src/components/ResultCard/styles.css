@@ -19,6 +19,7 @@
   flex-direction: column;
   padding: 0 10px 5px 10px;
   max-height: 231px;
+  width: 100%;
 }
 
 h4 {
