@@ -1,62 +1,58 @@
 .resultCard {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 20px;
-    width: 100%;
-    margin-top: 5px;
-    background-color: whitesmoke
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 5px;
+  background-color: whitesmoke
 }
 
 .resultCard:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .resultCard img {
-    height: 100%;
-    border-radius: 20px 0 0 20px;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
 }
 
 .cardDetails {
-    flex-direction: column;
-    padding: 0 10px 5px 10px;
-    max-height: 231px;
+  flex-direction: column;
+  padding: 0 10px 5px 10px;
+  max-height: 231px;
 }
 
 h4 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .cardDetails p, h4 {
-    color: #1a676e;
-    margin: 2px 0 2px 0;
-}
-
-.cardDetails p {
-    
+  color: #1a676e;
+  margin: 2px 0 2px 0;
 }
 
 .cardDetails p strong {
-    display: contents;
+  display: contents;
 }
 
 .releaseRatingContainer {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 span.releaseDate {
-    color: #329ea8;
-    margin: 0;
+  color: #329ea8;
+  margin: 0;
 }
 
 span.rating {
-    color: #1a676e;
-    font-weight: bold;
+  color: #1a676e;
+  font-weight: bold;
 }
 
 p.movieOverview {
-    text-overflow: ellipsis;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .posterPlaceholder {
-    width: 154px;
+  width: 154px;
 }
