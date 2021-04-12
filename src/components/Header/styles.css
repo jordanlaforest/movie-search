@@ -1,13 +1,18 @@
 .headerContainer {
   padding: 20px;
-  background-color: #329ea8;
-  box-shadow: inset 0px 20px 50px 0px #1a676e;
+  background-color: #1a676e;
+  box-shadow: inset 0 0 50px 0px #0c2d30;
+}
+
+.headerContainer label {
+  color:white;
+  font-size: 0.9em;
 }
 
 .headingText {
   font-size: 1.5em;
   margin-right: -152px;
-  color: whitesmoke;
+  color: white;
 }
 
 .inputContainer {
@@ -22,7 +27,7 @@
 }
 
 .searchInput {
-  border: 1px solid black;
+  border: 1px solid #0c2d30;
   border-right: none;
   border-radius: 5px 0 0 5px;
   padding: 5px 10px;
@@ -32,10 +37,10 @@
 .searchButton {
   border-radius: 0 5px 5px 0;
   padding: 5px 10px;
-  border: 1px solid black;
+  border: 1px solid #0c2d30;
   align-items: center;
-  background-color: #1a676e;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: #0c2d30;
   width: 65px;
 }
 
@@ -43,7 +48,7 @@
   .headerContainer {
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0px 20px 50px 20px #1a676e;
+    box-shadow: inset 0px 20px 70px 10px #0c2d30;
   }
 
   .headingText {

@@ -16,20 +16,20 @@ export default function ResultCard(props) {
 
   
   return (
-    <div className="resultCard">
+    <div className="resultCard" role="listitem" aria-posinset={props.idx} aria-setsize="-1">
       {poster_path ?
         <img src={posterImgPath + poster_path} alt='' />
         :
-        <img src="/poster-placeholder.png" className="posterPlaceholder" alt='' />
+        <img src="/poster-placeholder.png" className="posterPlaceholder" alt="" />
       }
       <div className="cardDetails">
-        <h4>{title}</h4>
+        <h2>{title}</h2>
         <div className="releaseRatingContainer">
           <span className="releaseDate">{release_date}</span>
           <span className="rating">{vote_average}/10</span>
         </div>
         <p className="genres">{genres}</p>
-        <p className="movieOverview">{overview}</p>
+        <p className="movieOverview" tabIndex="0">{overview}</p>
       </div>
     </div>
   );

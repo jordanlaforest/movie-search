@@ -28,7 +28,7 @@ export default function Main() {
   const dispatch = useDispatch();
   const ref = useRef();
 
-  const noMorePagesDiv = noMorePages && !notSearched && results.length !== 0 ? '' : 'infiniteScroll';
+  const showNoMorePagesMsg = noMorePages && !notSearched && results.length !== 0;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -44,18 +44,18 @@ export default function Main() {
   }, [ref, results, notSearched, noMorePages, dispatch]);
 
 	return (
-		<main className="mainContent">
+		<main className="mainContent" tabIndex="0" aria-live="polite">
 			{results.length === 0
         ?
           status === 'loading' ? null : notSearched ? pleaseSearch : noResults
 				:
-          <div className="cardContainer">
+          <div className="cardContainer" role="list">
             {results.filter(movie => movie.genres.toLowerCase().indexOf(filter) > -1 || movie.overview.toLowerCase().indexOf(filter) > -1).map((movie, index) => 
-              <ResultCard key={index} movie={movie} />
+              <ResultCard key={movie.id} idx={index+1} movie={movie} />
             )}
           </div>
       }
-      <div className={noMorePagesDiv} ref={ref}><p className="contentMsg">No more results to load</p></div>
+      <div className={showNoMorePagesMsg ? '' : 'infiniteScroll'} ref={ref} aria-hidden={!showNoMorePagesMsg}><p className="contentMsg">No more results to load</p></div>
       {status === 'loading' ? <p className="contentMsg">Loading results...</p> : null}
 		</main>
 	);

@@ -7,7 +7,8 @@ const initialState = {
   lastQuery: '',
   lastPageFetched: 0,
   totalPages: 0,
-  status: 'idle'
+  status: 'idle',
+  error: ''
 };
 
 export const fetchSearch = createAsyncThunk(
@@ -34,15 +35,18 @@ export const searchSlice = createSlice({
   reducers: {
     refineSearch(state, action){
       state.filter = action.payload.query.toLowerCase();
-    },
-    clearFilter(state){
-      state.filter = '';
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSearch.pending, (state, action) => {
         state.status = 'loading';
+        if(action.meta.arg.page === 1){
+          state.results = [];
+          state.lastPageFetched = 0;
+          state.totalPages = 0;
+          state.error = '';
+        }
         state.lastQuery = action.meta.arg.query;
       })
       .addCase(fetchSearch.fulfilled, (state, action) => {
@@ -58,7 +62,7 @@ export const searchSlice = createSlice({
       })
       .addCase(fetchSearch.rejected, (state, action) => {
         state.status = 'idle';
-        //Store error in state
+        state.error = action.error.message;
       });
   },
 });
@@ -70,5 +74,6 @@ export const selectStatus = (state) => state.search.status;
 export const selectNoMorePages = (state) => state.search.lastPageFetched >= state.search.totalPages;
 export const selectNotSearched = (state) => state.search.lastPageFetched === 0;
 export const selectFilter = (state) => state.search.filter;
+export const selectError = (state) => state.search.error;
 
 export default searchSlice.reducer;

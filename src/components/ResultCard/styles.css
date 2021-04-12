@@ -22,11 +22,7 @@
   width: 100%;
 }
 
-h4 {
-  font-size: 20px;
-}
-
-.cardDetails p, h4 {
+.cardDetails p, h2 {
   color: #1a676e;
   margin: 2px 0 2px 0;
 }

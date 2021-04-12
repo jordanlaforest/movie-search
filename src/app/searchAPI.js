@@ -41,6 +41,7 @@ export function searchAPIRequest(searchString, page) {
       //Here we only store the relevant data while converting genre ids to human readable genres
       const results = response.data.results.map((res) => {
         return {
+          id: res.id,
           title: res.title,
           poster_path: res.poster_path,
           release_date: res.release_date,
@@ -55,9 +56,12 @@ export function searchAPIRequest(searchString, page) {
         results: results
       });
     }).catch((error) => {
-      console.log('Get request failed');
-      console.log(error);
-      reject(error);
+      if(error.response.status === 422){
+        reject('Search must not be empty');
+      }else if(error.response.status === 401){
+        reject('Invalid API key. Contact me to fix.');
+      }
+      reject('Unknown error');
     })
   );
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './styles.css';
 
-import {fetchSearch, refineSearch} from '../../app/searchReducer';
+import {fetchSearch, refineSearch, selectError} from '../../app/searchReducer';
 
 export default function Header() {
   const dispatch = useDispatch();
   const [searchState, setSearchState] = useState('');
   const [refineState, setRefineState] = useState('');
+  const error = useSelector(selectError);
 
   return (
     <header className="headerContainer">
@@ -33,6 +34,11 @@ export default function Header() {
             }}
           >Search</button>
         </form>
+        {error && 
+          <label htmlFor="Movie Searchbar">
+            {error}
+          </label>
+        }
         <form name="Refine Search" className="searchForm">
           <input
             name="Refine Input"
