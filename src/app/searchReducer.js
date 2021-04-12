@@ -58,11 +58,7 @@ export const searchSlice = createSlice({
         state.lastPageFetched = action.payload.page;
         state.totalPages = action.payload.total_pages;
 
-        if(action.payload.page === 1){ //If it's the first page that means it's a new search
-          state.results = action.payload.results;
-        }else{ //if page is > 1 then the request was from infinite scroll
-          state.results = state.results.concat(action.payload.results);
-        }
+        state.results = state.results.concat(action.payload.results);
       })
       .addCase(fetchSearch.rejected, (state, action) => {
         state.status = 'idle';
