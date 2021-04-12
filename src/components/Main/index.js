@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+//Polyfill for IE 11
+import IntersectionObserver from 'intersection-observer-polyfill';
+
 import './styles.css';
 
 import ResultCard from '../ResultCard';
