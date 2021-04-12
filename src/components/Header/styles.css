@@ -5,15 +5,20 @@
 }
 
 .headingText {
-  margin: 0;
   font-size: 1.5em;
   margin-right: -152px;
   color: whitesmoke;
 }
 
-.searchForm {
+.inputContainer {
   flex: 1 1 auto;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.searchForm {
+  padding: 3px 0 3px 0;
 }
 
 .searchInput {
@@ -21,6 +26,7 @@
   border-right: none;
   border-radius: 5px 0 0 5px;
   padding: 5px 10px;
+  width: 230px;
 }
 
 .searchButton {
@@ -30,6 +36,7 @@
   align-items: center;
   background-color: #1a676e;
   color: whitesmoke;
+  width: 65px;
 }
 
 @media (max-width: 650px) {

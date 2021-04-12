@@ -4,7 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import './styles.css';
 
 import ResultCard from '../ResultCard';
-import {selectSearchResults, selectStatus, selectNoMorePages, selectNotSearched, fetchNextPage} from '../../app/searchReducer';
+import {selectSearchResults,
+  selectStatus,
+  selectNoMorePages,
+  selectNotSearched,
+  selectFilter,
+  fetchNextPage
+} from '../../app/searchReducer';
 
 const pleaseSearch = <p className="contentMsg">Type a search in the field above</p>;
 const noResults = <p className="contentMsg">No results found. Please try again.</p>;
@@ -14,6 +20,7 @@ export default function Main() {
   const status = useSelector(selectStatus);
   const notSearched = useSelector(selectNotSearched);
   const noMorePages = useSelector(selectNoMorePages);
+  const filter = useSelector(selectFilter);
 
   const dispatch = useDispatch();
   const ref = useRef();
@@ -40,7 +47,7 @@ export default function Main() {
           status === 'loading' ? null : notSearched ? pleaseSearch : noResults
 				:
           <div className="cardContainer">
-            {results.map((movie, index) => 
+            {results.filter(movie => movie.genres.includes(filter) || movie.overview.includes(filter)).map((movie, index) => 
               <ResultCard key={index} movie={movie} />
             )}
           </div>
