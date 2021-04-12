@@ -1,9 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-//Polyfill for IE 11
-import IntersectionObserver from 'intersection-observer-polyfill';
-
 import './styles.css';
 
 import ResultCard from '../ResultCard';
@@ -35,7 +32,7 @@ export default function Main() {
       if(entries[0].isIntersecting && !notSearched && !noMorePages){
         dispatch(fetchNextPage());
       }
-    }, {threshold: 0.9});
+    }, {threshold: 0.1});
     const currentRef = ref.current;
     if(currentRef) observer.observe(currentRef);
     return () => {
