@@ -12,6 +12,7 @@
 .cardContainer {
   flex-direction: column;
   padding: 5px;
+  width: 100%;
 }
 
 .contentMsg {
@@ -23,8 +24,4 @@
   height: 0;
   width: 0;
   overflow: hidden;
-}
-
-.infiniteScrollVisible {
-
 }
