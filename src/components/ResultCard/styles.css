@@ -51,6 +51,16 @@ p.genres {
 
 p.movieOverview {
   overflow: scroll;
+  overflow-x: hidden;
+}
+
+.movieOverview::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.movieOverview::-webkit-scrollbar-thumb {
+  background: #1a676e;
 }
 
 .posterPlaceholder {
