@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-const posterImgPath = 'https://image.tmdb.org/t/p/w154/';
+const posterImgPath = 'https://image.tmdb.org/t/p/w154';
 
 export default function ResultCard(props) {
   const {
