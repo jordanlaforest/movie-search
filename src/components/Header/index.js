@@ -54,6 +54,7 @@ export default function Header() {
             className="searchButton"
             onClick={(e) => {
               e.preventDefault();
+              document.getElementById('mainScrollable').scrollTop = 0;
               dispatch(refineSearch({query: refineState}));
             }}
           >Refine</button>

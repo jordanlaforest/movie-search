@@ -41,7 +41,7 @@ export default function Main() {
   }, [ref, results, notSearched, noMorePages, dispatch]);
 
 	return (
-		<main className="mainContent" tabIndex="0" aria-live="polite">
+		<main id="mainScrollable" className="mainContent" tabIndex="0" aria-live="polite">
 			{results.length === 0
         ?
           status === 'loading' ? null : notSearched ? pleaseSearch : noResults
