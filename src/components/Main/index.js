@@ -50,7 +50,7 @@ export default function Main() {
           status === 'loading' ? null : notSearched ? pleaseSearch : noResults
 				:
           <div className="cardContainer">
-            {results.filter(movie => movie.genres.includes(filter) || movie.overview.includes(filter)).map((movie, index) => 
+            {results.filter(movie => movie.genres.toLowerCase().indexOf(filter) > -1 || movie.overview.toLowerCase().indexOf(filter) > -1).map((movie, index) => 
               <ResultCard key={index} movie={movie} />
             )}
           </div>

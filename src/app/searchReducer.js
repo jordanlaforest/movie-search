@@ -33,7 +33,7 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     refineSearch(state, action){
-      state.filter = action.payload.query;
+      state.filter = action.payload.query.toLowerCase();
     },
     clearFilter(state){
       state.filter = '';
