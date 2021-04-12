@@ -13,9 +13,8 @@ const initialState = {
 
 export const fetchSearch = createAsyncThunk(
   'search/fetchSearch',
-  async (args) => {
-    const page = args.page ? args.page : 1;
-    const response = await searchAPIRequest(args.query, page);
+  async ({query, page=1}) => {
+    const response = await searchAPIRequest(query, page);
     return response;
   }
 );
@@ -41,7 +40,12 @@ export const searchSlice = createSlice({
     builder
       .addCase(fetchSearch.pending, (state, action) => {
         state.status = 'loading';
-        if(action.meta.arg.page === 1){
+        
+        /* This is kinda weird, if we're requesting the first page we reset the state first
+         *  but since we use a default value for the page arg it doesn't get passed along here.
+         *  Therefore if action.meta.arg.page is undefined this a request for page 1 and we reset state
+         */
+        if(!action.meta.arg.page){
           state.results = [];
           state.lastPageFetched = 0;
           state.totalPages = 0;
