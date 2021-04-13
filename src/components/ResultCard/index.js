@@ -14,7 +14,6 @@ export default function ResultCard(props) {
     vote_average
   } = props.movie;
 
-  
   return (
     <div className="resultCard" role="listitem" aria-posinset={props.idx} aria-setsize="-1">
       {poster_path ?
@@ -25,8 +24,8 @@ export default function ResultCard(props) {
       <div className="cardDetails">
         <h2>{title}</h2>
         <div className="releaseRatingContainer">
-          <span className="releaseDate">{release_date}</span>
-          <span className="rating">{vote_average}/10</span>
+          <span className="releaseDate" aria-label="Release Date">{release_date}</span>
+          <span className="rating">{vote_average + ' out of 10'}</span>
         </div>
         <p className="genres">{genres}</p>
         <p className="movieOverview" tabIndex="0">{overview}</p>
